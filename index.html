@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="wrapper">
+
+        <h1></h1>
+        <div class="dice-area">
+          <p>Player 1</p>
+          <img src="" alt="">
+        </div>
+        <div class="dice-area">
+          <p>Player 2</p>
+          <img src="" alt="">
+        </div>
+
+    </div>
+  <script>
+  const FirstPlayerNumber = Math.floor(Math.random()*6+1);
+  const FirstPlayerImg = "img/" + FirstPlayerNumber + ".png";
+
+  const SecondPlayerNumber = Math.floor(Math.random()*6+1);
+  const SecondPlayerImg = "img/" + SecondPlayerNumber + ".png";
+
+  document.querySelectorAll("img")[0].setAttribute("src", FirstPlayerImg);
+  document.querySelectorAll("img")[1].setAttribute("src", SecondPlayerImg);
+
+  if(FirstPlayerNumber>SecondPlayerNumber){
+    document.querySelector("h1").innerHTML = " Player 1 win!!! ";
+  }
+  else if (SecondPlayerNumber>FirstPlayerNumber){
+    document.querySelector("h1").innerHTML = " Player 2 win!!! ";
+  }
+  else{
+    document.querySelector("h1").innerHTML = " Draw!!! ";
+  }
+  </script>
+  </body>
+</html>
